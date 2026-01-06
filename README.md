@@ -5,7 +5,7 @@ Built using Python, REST APIs, Linux file systems, and JWT-based RBAC.
 
 ---
 
-## 🚀 Features
+##  Features
 
 - Role-Based Access Control (Admin / Manager / Viewer)
 - Secure JWT authentication
@@ -18,7 +18,7 @@ Built using Python, REST APIs, Linux file systems, and JWT-based RBAC.
 
 ---
 
-## 🏗 Architecture Overview
+##  Architecture Overview
 
 Frontend (HTML/CSS/JS)
 |
@@ -39,7 +39,7 @@ Assets are stored as directories on disk, enabling fast access, low latency, and
 
 ---
 
-## 👥 Roles & Permissions
+##  Roles & Permissions
 
 | Role    | Permissions |
 |--------|-------------|
@@ -51,7 +51,7 @@ RBAC is enforced at every API endpoint.
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 ```text
 smart-asset-management/
@@ -73,14 +73,16 @@ smart-asset-management/
 │   └── init_db.py
 ├── requirements.txt
 └── README.md
-🔐 Authentication
+```
+
+## Authentication
 Login via /login
 
 JWT token returned
 
 Token required in Authorization header for protected routes
 
-📦 Asset Lifecycle
+## Asset Lifecycle
 Asset created via API
 
 Directory created on disk
@@ -91,7 +93,7 @@ Asset visible on dashboard
 
 Admin can archive asset
 
-⚙️ Setup Instructions
+## Setup Instructions
 1. Clone Repo
 bash
 Copy code
@@ -117,7 +119,7 @@ python app/main.py
 6. Open Frontend
 Open frontend/index.html in browser.
 
-📊 Performance & Scale
+## Performance & Scale
 Designed for 300+ concurrent users
 
 Tested with thousands of asset directories
@@ -126,7 +128,7 @@ Sub-second metadata access using filesystem indexing
 
 Minimal memory footprint
 
-🛠 Future Enhancements
+## Future Enhancements
 IoT sensor ingestion (MQTT)
 
 Audit logging
@@ -137,68 +139,10 @@ Docker deployment
 
 Cloud storage integration
 
-📄 License
+## License
 MIT
 
 yaml
 Copy code
 
 ---
-
-## 2️⃣ Metrics Justification (IMPORTANT FOR INTERVIEWS)
-
-You **must be able to explain numbers**. Here’s how you defend them:
-
-### ✅ “300+ users”
-- Stateless JWT authentication
-- No session storage
-- RBAC enforced via lightweight middleware
-- SQLite → easily replaceable with Postgres/MySQL
-
-### ✅ “10,000+ assets/files”
-- Assets stored as directories
-- OS handles indexing efficiently
-- Metadata read via `os.stat()` (O(1))
-- No heavy ORM or DB joins
-
-### ✅ “<1s latency”
-- File-based metadata (no DB roundtrips)
-- JSON files per asset
-- Lightweight Flask routes
-
-👉 These are **reasonable engineering claims**, not fake numbers.
-
----
-
-## 3️⃣ Interview Explanation (Use This)
-
-> “I designed a centralized asset management system using Python and REST APIs.  
-Assets are represented as filesystem directories, allowing fast metadata extraction using OS-level calls.  
-Authentication is handled using JWT, and RBAC is enforced at the API layer to support multiple user roles.  
-The system is scalable, Linux-friendly, and suitable for manufacturing or IoT environments.”
-
-If they ask *why filesystem instead of DB*:
-> “Filesystem storage reduces latency for metadata-heavy workloads and scales well for large numbers of static assets.”
-
----
-
-## 4️⃣ Linux / Systems Angle (Say This)
-
-- Uses OS permissions
-- Uses real filesystem metadata
-- Directory-based asset isolation
-- Production-friendly layout
-- Works well on Linux servers
-
-This is **gold** for infra / backend interviews.
-
----
-
-## 5️⃣ Final Git Hygiene
-
-```bash
-git status
-git add .
-git commit -m "Finalize smart asset management system with frontend and documentation"
-git branch -M main
-git push origin main
