@@ -1,9 +1,27 @@
-from flask import Flask
+from flask import Flask, jsonify
 from .auth import login
 from .rbac import require_role
 from .assets import create_asset, list_assets, archive_asset
+from flask_cors import CORS
+
 
 app = Flask(__name__)
+
+CORS(app)
+
+
+@app.route("/", methods=["GET"])
+def home():
+    return jsonify({
+        "message": "Smart Asset Management API",
+        "version": "1.0",
+        "endpoints": {
+            "login": "POST /login",
+            "create_asset": "POST /assets",
+            "list_assets": "GET /assets",
+            "archive_asset": "POST /assets/<asset_id>/archive"
+        }
+    })
 
 @app.route("/login", methods=["POST"])
 def login_route():
