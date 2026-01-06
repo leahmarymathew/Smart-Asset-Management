@@ -19,7 +19,7 @@ Built using Python, REST APIs, Linux file systems, and JWT-based RBAC.
 ---
 
 ##  Architecture Overview
-
+```text
 Frontend (HTML/CSS/JS)
 |
 v
@@ -36,7 +36,7 @@ yaml
 Copy code
 
 Assets are stored as directories on disk, enabling fast access, low latency, and OS-level metadata extraction.
-
+```
 ---
 
 ##  Roles & Permissions
