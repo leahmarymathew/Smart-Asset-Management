@@ -1,7 +1,7 @@
 import jwt
 from flask import request, jsonify
-from app.database import get_db
-from app.config import SECRET_KEY
+from .database import get_db
+from .config import SECRET_KEY
 
 def login():
     data = request.json

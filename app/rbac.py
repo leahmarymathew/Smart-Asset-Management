@@ -1,7 +1,7 @@
 import jwt
 from flask import request, jsonify
 from functools import wraps
-from app.config import SECRET_KEY
+from .config import SECRET_KEY
 
 def require_role(allowed):
     def decorator(f):

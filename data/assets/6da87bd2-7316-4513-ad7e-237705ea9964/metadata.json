@@ -1,0 +1,11 @@
+{
+  "asset_id": "6da87bd2-7316-4513-ad7e-237705ea9964",
+  "name": "CNC Machine",
+  "type": "Manufacturing",
+  "owner": "Plant-A",
+  "status": "active",
+  "size_bytes": 0,
+  "permissions": "drwxrwxrwx",
+  "last_modified": "Tue Jan  6 17:52:48 2026",
+  "created": "Tue Jan  6 17:52:48 2026"
+}
